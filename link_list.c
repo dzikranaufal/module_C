@@ -122,8 +122,28 @@ void deleteFirst(Node **head){
 }
 
 
-void deleteLast(){
+void deleteLast(Node **head){
+    if(*head == NULL){
+        printf("empty");
+        return;
+    }
+
+    Node *temp = *head;
+    Node *prev = NULL;
+
+    while (temp->nextNode != NULL){
+        prev = temp;
+        temp = temp->nextNode;
+    }
+
+    if (prev == NULL){
+        *head = NULL;
+    }else{
+        prev->nextNode = NULL;
+    }
     
+    free(temp);
+    printf("deleted success");
 }
 
 void printList(Node *head){
