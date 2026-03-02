@@ -146,6 +146,36 @@ void deleteLast(Node **head){
     printf("deleted success");
 }
 
+void deleteMid(Node **head,char targetNim[]){
+    if(*head == NULL){
+        printf("empty");
+        return;
+    }
+
+    Node *temp = *head;
+    Node *prev = NULL;
+
+    while (temp != NULL && strcmp(temp->nim, targetNim) != 0){
+        prev = temp;
+        temp = temp->nextNode;
+    }
+
+    if (temp == NULL){
+        printf("NIM tidak ditemukan");
+        return;
+    }
+    
+    if (prev == NULL){
+        *head = temp->nextNode;
+    }else{
+        prev->nextNode = temp->nextNode;
+        temp->nextNode = NULL;
+    }
+
+    free(temp);
+    printf("deleted success");
+}
+
 void printList(Node *head){
     Node *temp = head;
     while (temp != NULL){
