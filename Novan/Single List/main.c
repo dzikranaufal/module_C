@@ -19,6 +19,17 @@ int main()
     insertMiddleAfter(&head, "2508836", "2508839", "Novan", "Teknik Informatika", 23);
     insertMiddleAfter(&head, "2508837", "2508843", "Rio", "Teknik Informatika", 22);
 
+    updateNode(head, "2508840", "Rina Updated", "Pendidikan Ilmu Komputer", 20);
+
+    deleteAtFront(&head);
+    printfList(head);
+
+    deleteAtEnd(&head);
     printList(head);
+
+    deleteMiddleNode(&head, "2508838");
+    printList(head);
+
+
     return 0;
 }
