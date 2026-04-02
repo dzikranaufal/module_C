@@ -127,11 +127,8 @@ void deleteLast(Node **head){
         temp = temp->nextNode;
     }
 
-    if (prev == NULL){
-        *head = NULL;
-    }else{
-        prev->nextNode = NULL;
-    }
+    if (prev == NULL) *head = NULL;
+    else prev->nextNode = NULL;
     
     free(temp);
     printf("deleted success");
