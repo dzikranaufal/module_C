@@ -76,9 +76,7 @@ void showWaitingTime(Queue *q){
     printf("Estimasi waktu tunggu:\n");
     while(!isEmpty(*q)){
         printf("pelanggan %d: %.2f menit\n", client, total);
-        //total durasi dijumlahkan agar durasi selanjutnya bertambah dengan index i+1
         total += q->time[q->head];
-        //setelah dialokasikan waktunya, data dequeue
         dequeue(q);
         client++;
     }
